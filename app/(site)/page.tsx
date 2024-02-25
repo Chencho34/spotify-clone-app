@@ -1,8 +1,11 @@
+import { Header } from "@/components";
 
 export default function Home (): JSX.Element {
   return (
-    <main className="text-green-500">
-      <h1>Spotify clone app</h1>
+    <main className='bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto'>
+      <Header>
+        header
+      </Header>
     </main>
   );
 }

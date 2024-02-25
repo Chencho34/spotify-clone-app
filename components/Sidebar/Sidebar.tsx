@@ -3,9 +3,8 @@ import { usePathname } from "next/navigation"
 import { useMemo } from "react"
 import { BiSearch } from "react-icons/bi"
 import { HiHome } from "react-icons/hi"
-import { Box } from ".."
+import { Box, Library } from ".."
 import SidebarItem from "./SidebarItem/SidebarItem"
-import { IconType } from "react-icons"
 
 interface SidebarProps {
   children: React.ReactNode
@@ -20,8 +19,6 @@ interface SidebarProps {
 
 export default function Sidebar ({ children }: SidebarProps): JSX.Element {
   const pathname = usePathname()
-  console.log(pathname)
-
   const routes = useMemo(() => [
     {
       label: 'Home',
@@ -50,10 +47,10 @@ export default function Sidebar ({ children }: SidebarProps): JSX.Element {
           </section>
         </Box>
         <Box className='overflow-y-auto h-full'>
-          Song Library
+          <Library />
         </Box>
       </article>
-      <main className='bg-cyan-700 h-full overflow-y-auto py-2'>
+      <main className='h-full w-full overflow-y-auto py-2'>
         {children}
       </main>
     </section>
